@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>IrisDJ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="top">
+  <div class="logo">Iris<b>DJ</b></div>
+  <div id="coach" data-zone="coach"><span class="coach-ico">●</span><span id="coach-text">Bienvenue ! Ouvre « Apprendre » pour commencer par le premier cours.</span></div>
+  <button id="btn-coach" class="tbtn on" title="Le coach te prévient quand quelque chose ne va pas (saturation, deux basses ensemble, tempos pas calés…)">Coach</button>
+  <button id="btn-reset" class="tbtn" title="Remet toute la table aux réglages par défaut (EQ, filtres, faders, tempo, effets…) et arrête les platines. Les morceaux restent chargés.">Reset</button>
+  <button id="btn-rec" class="tbtn" title="Enregistrer ton mix pour le réécouter"><span class="recdot"></span><span id="rec-label">REC</span></button>
+  <button id="btn-audio" class="tbtn" title="Sorties audio : master, casque">Sortie audio</button>
+  <button id="btn-keys" class="tbtn" title="Raccourcis clavier">Clavier</button>
+  <button id="btn-learn" class="tbtn accent" data-zone="learn-button">Apprendre</button>
+</header>
+
+<section id="waves" data-zone="waves">
+  <div class="wave" id="wave-A"><canvas></canvas><div class="wave-tag a">A</div><div class="wave-zoom"><button data-zoom="-1">−</button><button data-zoom="1">+</button></div></div>
+  <div id="phase" data-zone="phase"><canvas></canvas></div>
+  <div class="wave" id="wave-B"><canvas></canvas><div class="wave-tag b">B</div></div>
+</section>
+
+<main id="desk">
+  <section class="deck" id="deck-A" data-deck="A" data-zone="deck-A"></section>
+  <section id="mixer" data-zone="mixer"></section>
+  <section class="deck" id="deck-B" data-deck="B" data-zone="deck-B"></section>
+</main>
+
+<div id="lib-resize" title="Glisser pour redimensionner"></div>
+<section id="library" data-zone="library">
+  <nav id="lib-tabs">
+    <button data-tab="practice" class="on">Entraînement</button>
+    <button data-tab="audius">Audius</button>
+    <button data-tab="soundcloud">SoundCloud</button>
+    <button data-tab="youtube">YouTube</button>
+    <button data-tab="files">Mes fichiers</button>
+    <div class="lib-search"><input id="lib-q" placeholder="Rechercher…" autocomplete="off"></div>
+    <div id="lib-extra"></div>
+  </nav>
+  <div id="lib-list"></div>
+</section>
+
+<aside id="learn" hidden>
+  <div class="learn-head"><button id="learn-back" class="lbtn" hidden>← Cours</button><b id="learn-title">Apprendre à mixer</b><button id="learn-close" class="lbtn" title="Fermer">✕</button></div>
+  <div id="learn-body"></div>
+</aside>
+
+<div id="toast"></div>
+<div id="modal" hidden><div class="modal-box"><div id="modal-body"></div></div></div>
+<div id="drop-hint" hidden>Dépose tes morceaux ici</div>
+
+<script src="js/bridge.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
